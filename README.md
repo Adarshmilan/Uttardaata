@@ -1,25 +1,55 @@
+# 📞 Uttardaata – AI Phone Call Assistant
 
-🧠 Project Goal:
+> 🚧 **Status: planning stage.** This repository currently holds the project plan and learning roadmap – no code yet.
 
-A person calls a number → An AI picks up → Listens to what the caller says → Thinks and replies like a human → Speaks the answer
+**Uttardaata** (उत्तरदाता, "the one who answers") is an AI that answers phone calls. Someone calls a number, the AI picks up, listens, thinks and replies out loud like a human.
 
+## 🧠 How it will work
 
+```
+📱 Caller dials number
+      │
+      ▼
+☎️  Twilio receives the call
+      │
+      ▼
+🎙️  Speech-to-Text (Whisper / Google)   →  caller's words as text
+      │
+      ▼
+🤖  LLM generates a reply
+      │
+      ▼
+🔊  Text-to-Speech (gTTS / pyttsx3 / Amazon Polly)
+      │
+      ▼
+📱 Caller hears the answer
+```
 
+## 🛠️ Planned tech stack
 
-🌱 Step-by-Step Path for anyone 
+| Tool | Why |
+|------|-----|
+| HTML, CSS | Simple website / dashboard |
+| Python + Flask | Backend server that handles Twilio webhooks |
+| Twilio | Phone number and incoming calls |
+| Whisper / Google Speech-to-Text (`SpeechRecognition`) | Convert the caller's voice to text |
+| OpenAI GPT (or another LLM) | Generate a smart reply |
+| gTTS / pyttsx3 / Amazon Polly | Convert the reply back to speech |
+| Render or Railway | Host the app online |
 
+## 🌱 Roadmap
 
-✅ Step 1: Learn the Tools You'll Use
+- [ ] Learn the basics: HTML, CSS, Python, Flask
+- [ ] Set up a Twilio number and answer a call with a fixed message
+- [ ] Add speech-to-text for the caller's words
+- [ ] Connect an LLM to generate replies
+- [ ] Add text-to-speech and play the reply on the call
+- [ ] Support multi-turn conversations
+- [ ] Deploy to Render / Railway
 
+## 📚 Learning resources
 
-Skill / Tool     	                            Why You Need It	                            How to Learn
-
-Python	                                        To make a website	                        YouTube: “Python tutorial for beginners”
-CSS	                                            To make a website	                        YouTube: “CSS tutorial for beginners”
-HTML	                                        To make a website	                        YouTube: “HTML tutorial for beginners”
-Python (Flask)	                                To make a backend server	                YouTube: “Flask tutorial for beginners”
-Twilio	                                        To receive phone calls via a phone number	Twilio Docs
-Speech-to-Text (Google or Whisper)	            To convert voice into text	                Use SpeechRecognition Python library
-Text-to-Speech	                                To convert AI text to voice	                Try pyttsx3, gTTS, or Amazon Polly
-OpenAI GPT	                                    For the smart reply	                        OpenAI API Docs
-Hosting (Render or Railway)	                    To run your app on the internet	            Easy hosting platforms for beginners
+- Python, HTML, CSS, Flask – beginner tutorials on YouTube
+- [Twilio Voice docs](https://www.twilio.com/docs/voice)
+- [SpeechRecognition (Python)](https://pypi.org/project/SpeechRecognition/)
+- [OpenAI API docs](https://platform.openai.com/docs)
